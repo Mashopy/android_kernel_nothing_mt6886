@@ -299,6 +299,7 @@ struct fts_ts_data {
 	struct notifier_block fb_notif;
 
 	int double_tap_pressed;
+	int single_tap_pressed;
 };
 
 
