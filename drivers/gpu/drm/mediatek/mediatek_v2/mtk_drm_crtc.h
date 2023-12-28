@@ -975,6 +975,8 @@ struct mtk_drm_crtc {
 	bool is_dsc_output_swap;
 
 	struct work_struct delay_set_brightness_work;
+
+	bool hbm_requested;
 };
 
 struct mtk_crtc_state {
