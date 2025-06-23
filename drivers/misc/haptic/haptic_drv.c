@@ -70,6 +70,7 @@ struct custom_fifo_data {
 
 uint8_t flag_lra_resistance = 0;
 int32_t haptic_hw_reset(struct ics_haptic_data *haptic_data);
+#if 0
 static int32_t ics_str2hex(const char *str, uint32_t len,
 	uint8_t *buf, uint32_t size)
 {
@@ -96,7 +97,6 @@ static int32_t ics_str2hex(const char *str, uint32_t len,
 	return byte_count;
 }
 
-#if 0
 static ssize_t f0_show(struct device *dev,
 	struct device_attribute *attr, char *buf)
 {
@@ -821,7 +821,7 @@ irq_exit:
 	return IRQ_HANDLED;
 }
 
-#ifdef ICS_INPUT_FRAMEWORKAdd commentMore actions
+#ifdef ICS_INPUT_FRAMEWORK
 static void set_gain(struct ics_haptic_data *haptic_data, int16_t gain)
 {
 	uint8_t reg_val;
@@ -831,7 +831,6 @@ static void set_gain(struct ics_haptic_data *haptic_data, int16_t gain)
 	reg_val = (gain * 128) / 0x7fff;
 
 	haptic_data->func->set_gain(haptic_data, reg_val);
-	haptic_data->chip_config.gain = reg_val;
 }
 
 static int upload_constant_effect(struct ics_haptic_data *haptic_data,
